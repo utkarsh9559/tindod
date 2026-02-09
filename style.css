@@ -1,0 +1,40 @@
+/* Style for the Appointment Page */
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin-top: 50px;
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .alert {
+    font-size: 1rem;
+  }
+  
+  .alert-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .alert-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  

@@ -1,0 +1,17 @@
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+  
+  // Dog Breed Selection Event
+  document.getElementById('find-match').addEventListener('click', () => {
+    const breed = document.getElementById('breed').value;
+    alert(`Searching for a match for your dog: ${breed}`);
+  });
+  

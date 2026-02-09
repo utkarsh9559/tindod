@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TinDog</title>
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">TinDog</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#footer">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#pricing">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#cta">Download</a>
+      </li>
+      <!-- Add Sign Up Link Here -->
+      <li class="nav-item">
+        <a class="nav-link" href="signup.html">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Login</a>
+      </li>
+      <!-- Add a link to the appointment page -->
+<li class="nav-item">
+    <a class="nav-link" href="appointment.html">Book Appointment</a>
+  </li>
+  
+    </ul>
+  </div>
+</nav>
+
+<!-- Title Section -->
+<section id="title" class="text-center text-white py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1 class="big-heading">Meet New and Interesting Dogs Nearby</h1>
+          <button class="btn btn-light btn-lg my-3"><i class="fa-brands fa-apple"></i> Download</button>
+          <button class="btn btn-dark btn-lg my-3"><i class="fa-brands fa-windows"></i> Download</button>
+        </div>
+        <div class="col-md-6">
+          <!-- Dog Image -->
+          <img src="https://cdn.pixabay.com/photo/2023/08/18/15/02/dog-8198719_1280.jpg" alt="Dog" class="img-fluid rounded-circle title-dog-img">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Features Section -->
+<section id="features" class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 feature-box">
+        <i class="fas fa-check-circle fa-4x text-primary"></i>
+        <h3 class="feature-title">Easy to Use</h3>
+        <p>Simple design, even your dog could use it!</p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <i class="fas fa-bullseye fa-4x text-primary"></i>
+        <h3 class="feature-title">Elite Clients</h3>
+        <p>Only the best dogs make it onto TinDog.</p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <i class="fas fa-heart fa-4x text-primary"></i>
+        <h3 class="feature-title">Guaranteed Matches</h3>
+        <p>Find your dog's perfect match or get your money back!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dog Selector Section -->
+<section id="dog-selector" class="text-center py-5">
+    <div class="container">
+      <h2 class="section-heading">Find the Perfect Match for Your Dog</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+
+          <!-- Adding a div to show the selected breed -->
+          <div id="selected-breed" class="mb-4"></div>
+  
+          <label for="dog-breed" class="form-label">Select Your Dog's Breed</label>
+          <select id="dog-breed" class="form-select custom-select">
+            <option value="chihuahua">Chihuahua</option>
+            <option value="labrador">Labrador</option>
+            <option value="bulldog">Bulldog</option>
+            <option value="poodle">Poodle</option>
+            <option value="golden_retriever">Golden Retriever</option>
+            <option value="beagle">Beagle</option>
+            <option value="german_shepherd">German Shepherd</option>
+            <option value="boxer">Boxer</option>
+            <option value="dachshund">Dachshund</option>
+            <option value="cocker_spaniel">Cocker Spaniel</option>
+            <option value="pomeranian">Pomeranian</option>
+            <option value="dalmatian">Dalmatian</option>
+            <option value="rottweiler">Rottweiler</option>
+            <option value="bulmastiff">Bullmastiff</option>
+            <option value="doberman">Doberman</option>
+            <option value="chow_chow">Chow Chow</option>
+            <option value="shiba_inu">Shiba Inu</option>
+            <option value="husky">Siberian Husky</option>
+            <option value="french_bulldog">French Bulldog</option>
+            <option value="border_collie">Border Collie</option>
+            <option value="cavalier_king_charles_spaniel">Cavalier King Charles Spaniel</option>
+          </select>
+        </div>
+        <div class="col-md-66">
+          <button id="find-match" class="btn btn-primary mt-4">Find Match</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 bg-secondary text-white">
+  <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active text-center">
+        <h2 class="testimonial-text">"TinDog changed my dog's life! No more sniffing around!"</h2>
+        <img class="testimonial-image rounded-circle" src="https://t3.ftcdn.net/jpg/06/49/71/98/360_F_649719870_0KjDq1hvvnto0WfYg08Lo1os3L1OLEUW.jpg" alt="dog-profile">
+        <em>Pebbles, New York</em>
+      </div>
+      <div class="carousel-item text-center">
+        <h2 class="testimonial-text">"Thanks to TinDog, my dog found the perfect partner!"</h2>
+        <img class="testimonial-image rounded-circle" src="https://www.perfocal.com/blog/content/images/size/w960/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg" alt="lady-profile">
+        <em>Beverly, Illinois</em>
+      </div>
+      <div class="carousel-item text-center">
+        <h2 class="testimonial-text">"We made amazing connections through TinDog. Highly recommend it to every dog owner!"</h2>
+        <img class="testimonial-image rounded-circle" src="https://img.freepik.com/free-photo/dark-skinned-lady-keeps-lips-rounded-wants-kiss-adorable-pet-plays-with-small-puppy_273609-34281.jpg" alt="dog-profile">
+        <em>Charlie, California</em>
+      </div>
+    </div>   
+
+    <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+
+    <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-5 text-center bg-light">
+  <h2 class="section-heading">Affordable Plans for Every Dog</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Chihuahua</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">Free</h2>
+            <p>5 Matches per day</p>
+            <p>10 Messages per day</p>
+            <button class="btn btn-outline-dark">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Labrador</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">$49 / mo</h2>
+            <p>Unlimited Matches</p>
+            <p>Unlimited Messages</p>
+            <button class="btn btn-dark">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Mastiff</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">$99 / mo</h2>
+            <p>Priority Listing</p>
+            <p>Unlimited Matches</p>
+            <button class="btn btn-dark">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section id="cta" class="text-center text-white py-5 bg-danger">
+  <h3>Find the True Love of Your Dog’s Life Today!</h3>
+  <button class="btn btn-light btn-lg my-3"><i class="fa-brands fa-apple"></i> Download</button>
+  <button class="btn btn-dark btn-lg my-3"><i class="fa-brands fa-windows"></i> Download</button>
+  <p class="mt-4">
+    <a href="signup.html" class="btn btn-outline-light btn-lg">Sign Up Now</a>
+  </p>
+</section>
+
+<!-- Footer Section -->
+<footer id="footer" class="text-center py-4 bg-dark text-white">
+  <i class="fab fa-instagram social-icon"></i>
+  <i class="fab fa-facebook social-icon"></i>
+  <i class="fab fa-twitter social-icon"></i>
+  <i class="fas fa-envelope social-icon"></i>
+  <p>© 2025 TinDog</p>
+</footer>
+
+<!-- Bootstrap JS and Custom Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+  // Function to display selected breed
+  document.getElementById('dog-breed').addEventListener('change', function() {
+    const selectedBreed = this.value;
+    document.getElementById('selected-breed').textContent = `Selected breed: ${selectedBreed.charAt(0).toUpperCase() + selectedBreed.slice(1)}`;
+  });
+
+  // Function to handle match finding action
+  document.getElementById('find-match').addEventListener('click', function() {
+    const selectedBreed = document.getElementById('dog-breed').value;
+    if (selectedBreed) {
+      window.location.href = `dog-matches.html?breed=${selectedBreed}`;
+    } else {
+      alert('Please select a breed');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dog Matches</title>
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Custom styling for the dog image */
+    .dog-profile-img {
+      width: 100px; /* small size */
+      height: 100px; /* small size */
+      object-fit: cover; /* ensures the image fits well */
+      border-radius: 50%; /* makes it circular */
+      margin: 0 auto; /* centers the image */
+    }
+
+    .card-body {
+      text-align: center; /* Centers the text inside the card */
+    }
+
+    .card {
+      border: none; /* removes card border */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* adds subtle shadow to the card */
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* adds hover effect */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.html">TinDog</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#footer">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#pricing">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#cta">Download</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Title Section -->
+<section id="title" class="text-center text-white py-5">
+    <div class="container">
+      <h1>Matches for Your Dog</h1>
+      <p class="lead" id="breed-heading"></p>
+    </div>
+</section>
+
+<!-- Dog Matches Section -->
+<section id="dog-matches" class="py-5">
+  <div class="container">
+    <div class="row" id="matches-container">
+      <!-- Dog profile cards will go here -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer id="footer" class="text-center py-4 bg-dark text-white">
+  <i class="fab fa-instagram social-icon"></i>
+  <i class="fab fa-facebook social-icon"></i>
+  <i class="fab fa-twitter social-icon"></i>
+  <i class="fas fa-envelope social-icon"></i>
+  <p>© 2025 TinDog</p>
+</footer>
+
+<!-- Bootstrap JS and Custom Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+  // Sample dog data (you can replace this with real data or API calls)
+  const dogProfiles = {
+    chihuahua: [
+      {
+        name: "Buddy",
+        photo: "https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/2/2022/12/Chihuahua-Dog-Breed-Feature-Image.jpg ",
+        age: "2 years",
+        gender: "Male",
+        height: "25 cm",
+        weight: "3 kg",
+        location: "Los Angeles, CA"
+      },
+      {
+        name: "Bella",
+        photo: "https://consumer-cms.petfinder.com/sites/default/files/images/content/Chihuahua%20%204.jpg",
+        age: "1 year",
+        gender: "Female",
+        height: "23 cm",
+        weight: "2.5 kg",
+        location: "San Francisco, CA"
+      },
+      {
+        name: "Coco",
+        photo: "https://showsightmagazine.com/wp-content/uploads/2024/03/Chihuahua-head.jpg",
+        age: "3 years",
+        gender: "Female",
+        height: "26 cm",
+        weight: "3.2 kg",
+        location: "New York, NY"
+      }
+    ],
+    labrador: [
+      {
+        name: "Max",
+        photo: "https://cdn.pixabay.com/photo/2016/02/19/15/46/labrador-retriever-1210559_1280.jpg",
+        age: "4 years",
+        gender: "Male",
+        height: "60 cm",
+        weight: "30 kg",
+        location: "New York, NY"
+      },
+      {
+        name: "Lucy",
+        photo: "https://consumer-cms.petfinder.com/sites/default/files/images/content/Labrador%20Retriever%20%202_0.jpg",
+        age: "3 years",
+        gender: "Female",
+        height: "58 cm",
+        weight: "28 kg",
+        location: "Chicago, IL"
+      },
+      {
+        name: "Rex",
+        photo: "https://pethelpful.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTk2NTE0NzI4ODc5NTk3NTM1/doggie-matchmaker-is-the-labrador-retriever-right-for-you.jpg",
+        age: "5 years",
+        gender: "Male",
+        height: "63 cm",
+        weight: "35 kg",
+        location: "Los Angeles, CA"
+      }
+    ],
+    // Add more breeds if necessary
+  };
+
+  // Function to get the breed from the URL
+  function getBreedFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('breed');
+  }
+
+  // Function to load dog matches based on selected breed
+  function loadDogMatches() {
+    const breed = getBreedFromUrl();
+    const breedHeading = document.getElementById('breed-heading');
+    const matchesContainer = document.getElementById('matches-container');
+    
+    // Set the breed heading
+    breedHeading.textContent = `Available Matches for ${breed.charAt(0).toUpperCase() + breed.slice(1)}`;
+    
+    // Fetch the dog profiles based on breed
+    const profiles = dogProfiles[breed];
+    
+    if (profiles) {
+      profiles.forEach(profile => {
+        const profileCard = `
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="${profile.photo}" alt="${profile.name}" class="dog-profile-img" />
+              <div class="card-body">
+                <h5 class="card-title">${profile.name}</h5>
+                <p class="card-text">
+                  <strong>Age:</strong> ${profile.age}<br>
+                  <strong>Gender:</strong> ${profile.gender}<br>
+                  <strong>Height:</strong> ${profile.height}<br>
+                  <strong>Weight:</strong> ${profile.weight}<br>
+                  <strong>Location:</strong> ${profile.location}
+                </p>
+                <button class="btn btn-primary">Message ${profile.name}</button>
+              </div>
+            </div>
+          </div>
+        `;
+        matchesContainer.innerHTML += profileCard;
+      });
+    } else {
+      matchesContainer.innerHTML = `<p>No matches found for this breed.</p>`;
+    }
+  }
+
+  // Load the dog matches when the page loads
+  window.onload = loadDogMatches;
+</script>
+
+</body>
+</html>
